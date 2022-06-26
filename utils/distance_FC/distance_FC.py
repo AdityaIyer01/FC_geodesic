@@ -77,11 +77,20 @@ class distance_FC(object):
         vec2 = self._vectorize(self.FC2)
 
         return (1 - np.corrcoef(vec1, vec2)[0, 1])/2
-
-
-
-
-
-
-
     
+    def euclidean(self):
+        '''
+        conventional Euclidean distance between
+        two FC matrices. The matrices are vectorized
+        '''
+        vec1 = self._vectorize(self.FC1)
+        vec2 = self._vectorize(self.FC2)
+
+        return LA.norm(vec1 - vec2)
+
+
+
+
+
+
+
